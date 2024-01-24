@@ -7,7 +7,7 @@ const app = express();
 
 // MongoDB Create, Delete, Modify, Fetch Functions
 
-const mongoURI = "mongodb://localhost:27017";
+const mongoURI = ${{MONGODB_URI}};
 const dbName = "userBase";
 const collectionName = "users";
 
