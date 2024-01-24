@@ -7,7 +7,7 @@ const app = express();
 
 // MongoDB Create, Delete, Modify, Fetch Functions
 
-const mongoURI = process.env.MONGO_URI;
+const mongoURI = process.env.MONGODB_URI;
 const dbName = "userBase";
 const collectionName = "users";
 
