@@ -85,6 +85,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json())
 app.set("view engine", "pug");
 app.set("views", "public/views");
+app.set("port", process.env.PORT || 3000);
 app.use("/res", express.static("public"));
 
 // Use session middleware
