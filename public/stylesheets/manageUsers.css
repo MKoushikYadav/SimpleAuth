@@ -1,0 +1,14 @@
+#toolTip{
+    display:none;
+}
+
+.d-flex{
+    align-items: center;
+}
+
+h1.card-title{
+    margin-top:-50%;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom:20%;
+}

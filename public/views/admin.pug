@@ -1,0 +1,31 @@
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Admin Portal
+    link(rel="stylesheet" href="/res/stylesheets/bootstrap.css")
+    link(rel="stylesheet" href="/res/stylesheets/index.css")
+
+  body
+    .container-sm.text-center.page.m-0.min-vw-100
+      .content.row
+        .left-col.col-sm-8.h-100.d-flex.flex-column.justify-content-center
+          .imgContainer
+            img(src="..." class="rounded d-block" alt="Logo")
+
+        .right-col.col-sm-4.h-100.d-flex.flex-column.justify-content-center
+          .card.login.border-0.w-100
+            .card-body
+              h1.card-title Admin Login
+              form(method="post" action="/processLogin")
+                p#authTip.text-danger.fw-bold Incorrect User ID/Password
+                .form-floating.m-3.row
+                  input(type="text" class="form-control" id="floatingUsername" placeholder="User ID" name="userID")
+                  label(for="floatingID") User ID
+                .form-floating.m-3.row
+                  input(type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password")
+                  label(for="floatingPassword") Password
+                button.btn.btn-primary.w-100.m-auto(type="submit") Login
+
+    script(src="/res/scripts/bootstrap.js")
+    script(src="/res/scripts/index.js")
