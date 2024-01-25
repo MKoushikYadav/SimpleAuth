@@ -5,10 +5,38 @@
 .d-flex{
     align-items: center;
 }
+.content{
+    height: 100%;
+}
 
 h1.card-title{
-    margin-top:-50%;
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom:20%;
+}
+
+.createCard{
+    margin-top:calc(-50% + 12rem);
+    height:auto;
+    max-height: 18.75rem;
+    max-width:35rem;
+    background-color: beige;
+}
+
+.userList{
+    margin-top: -20%;
+}
+.lcol, .rcol{
+    height:100%;
+}
+.container{
+    height: 100vh;
+    min-height: 100vh;
+}
+
+
+
+@media (max-width:576px) {
+    .lcol, .rcol{
+        height:50%;
+    }
 }

@@ -1,0 +1,19 @@
+#authTip{
+    display: none;
+}
+
+.imgContainer{
+    margin:auto;
+}
+
+.card{
+    background-color:antiquewhite;
+    margin:auto;
+    margin-top:10%;
+    min-width: 18rem;
+    width:20%;
+}
+.container{
+    height: 100vh;
+    min-height: 100vh;
+}

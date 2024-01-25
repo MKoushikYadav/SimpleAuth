@@ -4,20 +4,17 @@ html(lang="en")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title Admin Portal
     link(rel="stylesheet" href="/res/stylesheets/bootstrap.css")
-    link(rel="stylesheet" href="/res/stylesheets/admin.css")
+    link(rel="stylesheet" href="/res/stylesheets/user.css")
 
   body
-    .container-sm.text-center.page.m-0.min-vw-100
-      .content.row
-        .left-col.col-12.col-md-8.d-flex.flex-column.justify-content-center
+    .container.text-center.page
           .imgContainer
             img(src="..." class="rounded d-block" alt="Logo")
-
-        .right-col.col-12.col-md-4.d-flex.flex-column.justify-content-center
-          .card.login.border-0.w-100
+            
+          .card.login.border-0
             .card-body
-              h1.card-title Admin Login
-              form.loginForm(method="post" action="/processAdminLogin")
+              h1.card-title User Login
+              form.loginForm(method="post" action="/processUserLogin")
                 p#authTip.text-danger.fw-bold Incorrect User ID/Password
                 .form-floating.m-3.row
                   input(type="text" class="form-control" id="userID" placeholder="User ID" name="userID")
@@ -26,7 +23,7 @@ html(lang="en")
                   input(type="password" class="form-control" id="password" placeholder="Password" name="password")
                   label(for="floatingPassword") Password
                 .m-3.row
-                  input.btn.form-control.btn-primary.w-50.m-auto(type="submit" value="Login")
+                  input.btn.form-control.btn-primary.w-100.m-auto(type="submit" value='Login')
 
     script(src="/res/scripts/bootstrap.js")
-    script(src="/res/scripts/admin.js")
+    script(src="/res/scripts/user.js")

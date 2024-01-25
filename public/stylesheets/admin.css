@@ -1,0 +1,44 @@
+.container{
+    height: 100vh;
+    min-height: 100vh;
+}
+
+.content{
+    height: 100vh;
+    min-height: 100vh;
+}
+
+.left-col, .right-col{
+    height:100%;
+}
+
+.left-col{
+    background-color: #0500FF;
+}
+.d-flex{
+    align-items: center;
+}
+
+
+.card-body{
+    margin-top:-50%;
+}
+h1.card-title{
+    font-size: 2.5rem;
+    font-weight: 700;   
+    
+}
+
+#authTip{
+    display:none;
+}
+
+
+@media (max-width:576px) {
+    .left-col, .right-col{
+        height:50%;
+    }
+    .card-body{
+        margin-top:-25%;
+    }
+}

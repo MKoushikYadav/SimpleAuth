@@ -1,0 +1,25 @@
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Admin Portal
+    link(rel="stylesheet" href="/res/stylesheets/bootstrap.css")
+    link(rel="stylesheet" href="/res/stylesheets/userHome.css")
+
+  body 
+    .container.text-center.page
+          .card.login.border-0.w-25.m-auto
+            .card-body 
+              .heading.card-title.fw-bold.fs-1 User Data
+              .userID 
+                .uidLabel.d-inline.fs-4.fw-semibold
+                  b User ID 
+                .
+                 #{user.userID}
+              .uidLabel.fs-4.fw-semibold
+                b User Photo
+              .photo  #{user.photo? user.photo: "No Photo"}
+              input.btn.btn-primary.w-100.m-auto(type="button" onclick="logout()" value='Logout')
+
+    script(src="/res/scripts/bootstrap.js")
+    script(src="/res/scripts/userHome.js")

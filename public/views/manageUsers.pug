@@ -7,26 +7,27 @@ html(lang="en")
     link(rel="stylesheet" href="/res/stylesheets/manageUsers.css")
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css" integrity="sha512-hvNR0F/e2J7zPPfLC9auFe3/SE0yG4aJCOd/qxew74NN7eyiSKjr7xJJMu1Jy2wf7FXITpWS1E/RY8yzuXN7VA==" crossorigin="anonymous" referrerpolicy="no-referrer")
   body
-    .container-sm.min-vw-100.min-vh-100.m-0
-      .row
-        .col-sm-6.min-vh-100.d-flex.flex-column.justify-content-center
-          .card.login.border-0.w-100
+    .container-sm.min-vw-100.m-0
+      .row.content
+        .lcol.col-sm-6.col-12.d-flex.flex-column.justify-content-center.align-items-center
+          .card.border-0.w-100.createCard.flex-item
             .card-body
               h1.card-title.text-center Create User
-              p#toolTip.text-danger.fw-bold
+              p#helpTip.text-danger.fw-bold
               form#userCreationForm
-                .form-floating.m-3.row
+                .form-floating.m-lg-3.m-1.row
                   input(type="text" class="form-control" id="userID" placeholder="User ID" name="userID")
                   label(for="userID") User ID
-                .form-floating.m-3.row
+                .form-floating.m-lg-3.m-1.row
                   input(type="password" class="form-control" id="password" placeholder="Password" name="password")
                   label(for="password") Password
                   input(type="hidden" name="action" value="add")
-                button(type="button" onclick="createUser()" class="btn btn-primary w-100 m-auto row") Create
+                .row
+                  input(type="button" onclick="createUser()" class="form-control btn btn-primary w-50 m-auto mb-0" value="Create") 
 
-        .col-sm-6.min-vh-100.d-flex.flex-column.justify-content-center 
+        .rcol.col-sm-6.col-12.d-flex.flex-column.justify-content-center.align-items-center
           .userTable.d-flex.flex-column
-            .card.login.border-0.w-100
+            .card.userList.border-0.w-100.flex-item
               .card-body
                 h1.card-title.text-center User List
                 table#userTable.table.table-striped.table-hover.table-dark

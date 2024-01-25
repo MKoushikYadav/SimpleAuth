@@ -1,12 +1,11 @@
 let url = "/accessDB";
-let toolTip = document.getElementById("toolTip");
+let helpTip = document.getElementById("helpTip");
 
 let deleteUser = async (_id) => {
   let data = JSON.stringify({
     action: "delete",
     _id: _id,
   });
-  console.log(data);
   await fetch(url, {
     method: "POST",
     headers: {
@@ -26,6 +25,11 @@ let deleteUser = async (_id) => {
 
 let createUser = async () => {
   let form = new FormData(document.getElementById("userCreationForm"));
+  if (form.get("userID").trim() == "" || form.get("password").trim() == "") {
+    helpTip.style.display = "block";
+    helpTip.innerHTML = "Fields cannot be empty/whitespaces";
+    return false;
+  }
   let data = {
     action: form.get("action"),
     userID: form.get("userID"),
@@ -47,7 +51,6 @@ let createUser = async () => {
     })
     .then((data) => {
       data = data.users;
-      console.log(data);
       updateTable(data);
     })
     .catch((error) => {
@@ -58,7 +61,7 @@ let updateTable = (data) => {
   let table = document.getElementById("userTable");
   table.tBodies[0].innerHTML = "";
   data.forEach((user) => {
-    table.tBodies[0].innerHTML += `<tr id=u_${user._id}>
+    table.tBodies[0].innerHTML += `<tr id=${user._id}>
     <td>${user.userID}</td>
     <td>${user.password}</td>
     <td>${user.photo ? user.photo : "No Photo"}</td>
