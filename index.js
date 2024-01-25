@@ -95,6 +95,10 @@ app.use(session({
   saveUninitialized: true,
 }));
 
+app.get("/", (req, res) => {
+  res.redirect("/admin");
+});
+
 app.get("/admin", (req, res) => {
   req.session.loggedIn=false;
   res.render("admin");
