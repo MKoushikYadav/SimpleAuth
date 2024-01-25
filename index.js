@@ -4,6 +4,7 @@ const fs = require("fs");
 const { MongoClient, Binary,ObjectId} = require("mongodb");
 const session = require("express-session");
 const app = express();
+const port = process.env.PORT || 3000;
 
 // MongoDB Create, Delete, Modify, Fetch Functions
 
@@ -85,7 +86,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json())
 app.set("view engine", "pug");
 app.set("views", "public/views");
-app.set("port", process.env.PORT || 3000);
 app.use("/res", express.static("public"));
 
 // Use session middleware
@@ -140,4 +140,4 @@ app.post("/accessDB", async (req, res) => {
 });
 
 // Listen on port 3000
-app.listen(3000, () => {});
+app.listen(port,"0.0.0.0",() => {console.log("Running")});
